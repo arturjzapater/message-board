@@ -25,21 +25,21 @@
             <div class="form-group">
                 <label>
                     Name
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="author" placeholder="Name" value="{{ old('name') }}" />
+                    <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author" placeholder="Name" value="{{ old('author') }}" />
                 </label>
-                @error('name')
+                @error('author')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label>
                     Message
-                    <textarea class="form-control @error('title') is-invalid @enderror" id="body" name="body">
-                        {{ old('message') }}
+                    <textarea class="form-control @error('body') is-invalid @enderror" id="body" name="body">
+                        {{ old('body') }}
                     </textarea>
                 </label>
                 @error('body')
-                    <div class="invalid-feedback">{{ $body }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
