@@ -4,19 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+            @foreach ($messages as $msg)
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <span class="font-weight-bold">{{ $msg->title }}</span>
+                            <span>{{ $msg->author }}</span>
                         </div>
-                    @endif
+                        <span style="font-size: 0.8rem;">{{ $msg->created_at }}</span>
+                    </div>
 
-                    {{ __('You are logged in!') }}
+                    <div class="card-body">
+                        {{ $msg->body }}
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
