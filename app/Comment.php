@@ -4,17 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Comment extends Model
 {
     protected $fillable = [
-        'title',
         'body',
     ];
-
-    public function comments()
-    {
-        return $this->hasMany('App\Comment');
-    }
 
     public function user()
     {
