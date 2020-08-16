@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    @auth
+        <a href='/new-message'>Write a new message</a>
+    @endif
+</div>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             @foreach ($messages as $msg)
@@ -9,7 +14,7 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <span class="font-weight-bold">{{ $msg->title }}</span>
-                            <span>{{ $msg->author }}</span>
+                            <span>{{ $msg->user->name }}</span>
                         </div>
                         <span style="font-size: 0.8rem;">{{ $msg->created_at }}</span>
                     </div>

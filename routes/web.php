@@ -34,7 +34,7 @@ Route::post('/submit', function(Request $request) {
     ]);
 
     $msg = new Message($data);
-    $msg->author = Auth::user()->name;
+    $msg->user_id = Auth::user()->id;
     $msg->save();
 
     return redirect('/');

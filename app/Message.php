@@ -8,7 +8,11 @@ class Message extends Model
 {
     protected $fillable = [
         'title',
-        'author',
         'body',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
