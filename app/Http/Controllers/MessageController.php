@@ -18,6 +18,15 @@ class MessageController extends Controller
         $this->middleware('auth')->except('getOne');
     }
 
+    public function deleteOne($id)
+    {
+        if (Message::find($id)->user_id === Auth::user()->id) {
+            Message::destroy($id);
+        }
+
+        return redirect('/');
+    }
+
     public function getOne($id)
     {
         $message = Message::find($id);

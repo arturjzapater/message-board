@@ -18,6 +18,15 @@ class CommentController extends Controller
         $this->middleware('auth');
     }
 
+    public function deleteOne($msg, $id)
+    {
+        if (Comment::find($id)->user_id === Auth::user()->id) {
+            Comment::destroy($id);
+        }
+
+        return redirect('/messages/' . $msg);
+    }
+
     public function submitComment(Request $request, $msg)
     {
         $data = $request->validate([

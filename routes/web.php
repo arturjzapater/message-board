@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/messages/new', 'MessageController@newMessage');
 Route::get('/messages/{id}', 'MessageController@getOne');
+Route::delete('/messages/{id}', 'MessageController@deleteOne');
+Route::delete('/messages/{msg}/comments/{id}', 'CommentController@deleteOne');
 
 Route::post('/submit', 'MessageController@submitMessage');
 

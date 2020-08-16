@@ -16,18 +16,37 @@
                 <div class="card-body">
                     {{ $message->body }}
                 </div>
+
+                <div class="card-footer">
+                    @if (Auth::check() && Auth::user()->id === $message->user_id)
+                        <form action="/messages/{{ $message->id }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-md-7 offset-md-1">
             @foreach ($comments as $comment)
-                <div class="card align-self-end mb-2">
+                <div class="card mb-2">
                     <div class="card-body">
                         {{ $comment->body }}
                     </div>
-                    <div class="card-footer text-muted text-right" style="font-size: 0.8rem;">
-                        {{ $comment->user->name }} on {{ $comment->created_at }}
+                    <div class="card-footer text-muted d-flex justify-content-between align-items-center" style="font-size: 0.8rem;">
+                        @if (Auth::user()->id === $comment->user_id)
+                            <form action="/messages/{{ $message->id }}/comments/{{ $comment->id }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        @else
+                            <div></div>
+                        @endif
+                        <span>{{ $comment->user->name }} on {{ $comment->created_at }}</span>
                     </div>
                 </div>
             @endforeach
