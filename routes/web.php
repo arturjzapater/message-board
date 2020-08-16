@@ -31,10 +31,10 @@ Route::post('/submit', function(Request $request) {
     $data = $request->validate([
         'title' => 'required|max:255',
         'body' => 'required',
-        'author' => 'required|max:255',
     ]);
 
     $msg = new Message($data);
+    $msg->author = Auth::user()->name;
     $msg->save();
 
     return redirect('/');
