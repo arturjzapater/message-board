@@ -4,6 +4,11 @@ Bulletin is a message board system that allows users to register, leave messages
 
 It was built as an exercise to learn more about [Laravel](laravel.com).
 
+This project is written in PHP and uses the following tech stack:
+- Laravel to create and manage the app's scaffolding
+- MySQL for the database
+- [Blade](https://laravel.com/docs/7.x/blade) as the templating engine
+
 ## Set Up Instructions
 
 Clone the project and install its dependencies:
