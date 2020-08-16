@@ -9,6 +9,6 @@ $factory->define(Message::class, function (Faker $faker) {
     return [
         'title' => substr($faker->sentence(1), 0, -1),
         'body' => $faker->paragraph(),
-        'author' => $faker->name(),
+        'user_id' => rand(1, 5),
     ];
 });
