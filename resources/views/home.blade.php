@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     @auth
-        <a href='/new-message'>Write a new message</a>
+        <a href='/messages/new'>Write a new message</a>
     @endif
 </div>
 <div class="container">
