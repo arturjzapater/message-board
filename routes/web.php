@@ -23,6 +23,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/messages/{id}', function($id) {
+    echo $id;
+});
+
 Route::get('/new-message', function() {
     return view('new-message');
 })->middleware('auth');

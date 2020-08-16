@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <span class="font-weight-bold">{{ $msg->title }}</span>
+                            <a href="messages/{{ $msg->id }}" class="font-weight-bold">{{ $msg->title }}</a>
                             <span>{{ $msg->user->name }}</span>
                         </div>
                         <span style="font-size: 0.8rem;">{{ $msg->created_at }}</span>
