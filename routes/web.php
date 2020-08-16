@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/new-message', function() {
     return view('new-message');
-});
+})->middleware('auth');
 
 Route::post('/submit', function(Request $request) {
     $data = $request->validate([
@@ -38,7 +38,7 @@ Route::post('/submit', function(Request $request) {
     $msg->save();
 
     return redirect('/');
-});
+})->middleware('auth');
 
 Auth::routes();
 
