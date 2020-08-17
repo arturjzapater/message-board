@@ -44,14 +44,16 @@ class MessageController extends Controller
 
     public function submitMessage(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
-        ]);
-    
-        $msg = new Message($data);
-        $msg->user_id = Auth::user()->id;
-        $msg->save();
+        if (Auth::check()) {
+            $data = $request->validate([
+                'title' => 'required|max:255',
+                'body' => 'required',
+            ]);
+        
+            $msg = new Message($data);
+            $msg->user_id = Auth::user()->id;
+            $msg->save();
+        }
     
         return redirect('/');
     }

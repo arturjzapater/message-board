@@ -3,16 +3,19 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class HomeTest extends TestCase
 {
+    use RefreshDatabase;
+    
     /**
-     * A basic test example.
+     * A basic home route test.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testHomeLoads()
     {
         $response = $this->get('/');
 

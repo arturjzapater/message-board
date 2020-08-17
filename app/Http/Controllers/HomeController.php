@@ -8,7 +8,7 @@ use \App\Message;
 class HomeController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the application home page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
