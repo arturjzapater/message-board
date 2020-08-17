@@ -6,7 +6,7 @@
         <h2>Write a Message</h2>
     </div>
     <div class="row">
-        <form action="/submit" method="post">
+        <form action="/messages" method="post">
             @csrf
             @if ($errors->any())
                 <div class="alert alert-danger" role="alert">

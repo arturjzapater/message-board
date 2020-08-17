@@ -59,7 +59,7 @@
                     <div class="card-header">
                         Add a comment
                     </div>
-                    <form action="/submit-comment/{{ $message->id }}" method="post" class="card-body">
+                    <form action="/messages/{{ $message->id }}/comments" method="post" class="card-body">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">

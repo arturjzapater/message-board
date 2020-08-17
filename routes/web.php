@@ -15,13 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
+Route::post('/messages', 'MessageController@submitMessage');
 Route::get('/messages/new', 'MessageController@newMessage');
 Route::get('/messages/{id}', 'MessageController@getOne');
 Route::delete('/messages/{id}', 'MessageController@deleteOne');
+
+Route::post('/messages/{msg}/comments', 'CommentController@submitComment');
 Route::delete('/messages/{msg}/comments/{id}', 'CommentController@deleteOne');
-
-Route::post('/submit', 'MessageController@submitMessage');
-
-Route::post('/submit-comment/{msg}', 'CommentController@submitComment');
 
 Auth::routes();
