@@ -37,7 +37,7 @@
                         {{ $comment->body }}
                     </div>
                     <div class="card-footer text-muted d-flex justify-content-between align-items-center" style="font-size: 0.8rem;">
-                        @if (Auth::user()->id === $comment->user_id)
+                        @if (Auth::check() && Auth::user()->id === $comment->user_id)
                             <form action="/messages/{{ $message->id }}/comments/{{ $comment->id }}" method="POST">
                                 @method('DELETE')
                                 @csrf

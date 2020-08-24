@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use Illuminate\Http\Request;
-use \App\Comment;
+use Illuminate\Support\Facades\Auth;
+use App\Comment;
 
 class CommentController extends Controller
 {
