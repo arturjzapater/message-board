@@ -26,6 +26,13 @@ npm install
 npm run dev
 ```
 
+Make a copy of [`.env.example`](.env.example), rename it as `.env` and generate an app key:
+
+```bash
+cp -a .env.example .env
+php artisan key:generate
+```
+
 Configure the environment variables. You will need to update `DB_DATABASE`, `DB_USERNAME` and `DB_PASSWORD` to match your database configuration.
 
 Run the database's migrations:
